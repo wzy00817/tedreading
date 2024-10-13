@@ -2,6 +2,7 @@
 document.body.addEventListener('click', function (event) {
 	// 检查点击是否发生在具有 .dropbt 类的元素上
 	var dropbt = event.target.closest('.dropbt');
+    
 	// 获取所有下拉菜单
 	const allDropdowns = document.querySelectorAll('.dropdown');
 	// 如果点击在dropbt元素上，展开或收起该下拉菜单
