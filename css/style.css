@@ -5,11 +5,11 @@ body {
 }
 @font-face {
 	font-family: "Garamond";
-	src: url("/resource/font/Garamond-Regular-2.ttf");
+	src: url("../resource/font/Garamond-Regular-2.ttf");
 }
 @font-face {
 	font-family: "方正悠宋+ GBK 509R";
-	src: url("/resource/font/FZYouSJK_509R.TTF");
+	src: url("../resource/font/FZYouSJK_509R.TTF");
 }
 /*中文框*/
 .details {
