@@ -1,106 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    transition: 0.3s;
+}
 body {
-	background-color: #ffb3a7;
-	background-image: linear-gradient(to bottom right, #d1d9e0, #75878a);
-	transition: 0.3s;
+    background-color: #ffb3a7;
+    background-image: linear-gradient(to bottom right, #d1d9e0, #75878a);
 }
 @font-face {
-	font-family: "Garamond";
-	src: url("../resource/font/Garamond-Regular-2.ttf");
+    font-family: "Garamond";
+    src: url("../resource/font/Garamond-Regular-2.ttf");
 }
-/*@font-face {
-	font-family: "方正悠宋+ GBK 509R";
-	src: url("../resource/font/FZYouSJK_509R.TTF");
-}*/
-/*中文框*/
-.details {
-	/*font-family: "方正悠宋+ GBK 509R";*/
-	background-color: bisque;
-	border-radius: 5px;
-	margin: 1em auto;
-	padding: 1em;
-	font-size: 15px;
-	transition: 0.3s;
-	line-height: 1.5em;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+@font-face {
+    font-family: "方正悠宋+ GBK 509R";
+    src: url("../resource/font/FZYouSJK_509R.TTF");
 }
-/*英文框*/
-.content {
-	font-family: "Garamond";
-	background-color: bisque;
-	border-radius: 5px;
-	margin: 1em auto;
-	padding: 1em;
-	font-size: 18px;
-	transition: 0.3s;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+@font-face {
+    font-family: "方正新书宋_GBK";
+    src: url("../resource/font/FZXSSK.TTF");
 }
-p {
-	margin: 0;
-	padding: 0;
-	height: 0;
-	overflow: hidden;
-	transition: 0.3s ease-in;
-}
+
 /*黑暗模式*/
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #222;
-		background-image: linear-gradient(to bottom right, #75878a, #d1d9e0);
+    body {
+        background-color: #222;
+        background-image: linear-gradient(to bottom right, #75878a, #d1d9e0);
 
-	}
-	body .details {
-		background-color: #666;
-		color: #f2ecde;
-	}
-	body .content {
-		background-color: #666;
-		color: #f2ecde;
-	}
+    }
+    body .details {
+        background-color: #666;
+        color: #f2ecde;
+    }
+    body .content {
+        background-color: #666;
+        color: #f2ecde;
+    }
 }
+
 /*开始导航栏*/
 .nav {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
 .dropbt {
-	background-color: antiquewhite;
-	border-radius: 10px 10px 0 0;
-	font-size: 12px;
-	margin: 0;
-	padding: 1em 0;
-	width: 100%;
-	position: relative;
-	text-align: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 14px;
+    background-color: antiquewhite;
+    border-radius: 10px 10px 0 0;
 }
 .dropdown {
-	background-color: aquamarine;
-	border-radius: 0 0 10px 10px;
-	font-size: 14px;
-	margin: 0;
-	height: 0;
-	transition: 0.3s;
-	width: 100%;
-	top: 100%;
-	overflow: hidden;
-	position: absolute;
-}
-.colorbox {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	justify-content: center;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 2rem;
+    overflow: hidden;
+    background-color: aquamarine;
+    border-radius: 0 0 10px 10px;
 }
 .coloritem {
-	color: red;
-	padding: 15px;
-	transition: 0.3s;
+    padding: 14px;
+    font-size: 15px;
 }
 .coloritem:hover {
-	font-size: 18px;
+    font-size: 17px;
 }
 .fenhong {background-color: #ffb3a7; color: #000000;}
 .jianghuang {background-color: #ffc773; color: #000000;}
@@ -108,3 +77,32 @@ p {
 .cangbai {background-color: #d1d9e0; color: #000000;}
 .shuise {background-color: #88ada6; color: #000000;}
 /*结束导航栏*/
+
+/* 开始正文 */
+/*中文框*/
+.details {
+    line-height: 1.5em;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-family: "方正新书宋_GBK";
+    font-size: 15px;
+    background-color: bisque;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/*英文框*/
+.content {
+    margin: 1rem auto;
+    padding: 1rem;
+    font-family: "Garamond";
+    font-size: 18px;
+    background-color: bisque;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+p {
+    height: 0;
+    overflow: hidden;
+}
+/* 结束正文 */
