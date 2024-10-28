@@ -7,20 +7,20 @@
     transition: 0.3s;
 }
 body {
-    background-color: #ffb3a7;
+    /* background-color: #ffb3a7; */
     background-image: linear-gradient(to bottom right, #d1d9e0, #75878a);
 }
 @font-face {
     font-family: "Garamond";
-    src: url("../resource/font/Garamond-Regular-2.ttf");
+    src: url("../../../resource/font/Garamond-Regular-2.ttf");
 }
 @font-face {
     font-family: "方正悠宋+ GBK 509R";
-    src: url("../resource/font/FZYouSJK_509R.TTF");
+    src: url("../../../resource/font/FZYouSJK_509R.TTF");
 }
 @font-face {
     font-family: "方正新书宋_GBK";
-    src: url("../resource/font/FZXSSK.TTF");
+    src: url("../../../resource/font/FZXSSK.TTF");
 }
 
 /*黑暗模式*/
@@ -34,54 +34,101 @@ body {
         background-color: #666;
         color: #f2ecde;
     }
-    body .content {
+    body .contents {
         background-color: #666;
         color: #f2ecde;
     }
 }
 
-/*开始导航栏*/
-.nav {
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+/* 开始header */
+.header {
+    height: 3rem;
 }
-.dropbt {
-    text-align: center;
-    position: relative;
-    width: 100%;
-    padding: 1rem 0;
-    font-size: 14px;
-    background-color: antiquewhite;
-    border-radius: 10px 10px 0 0;
-}
-.dropdown {
+.settingButton {
     position: absolute;
-    top: 100%;
+    top: 0;
+    right: 1rem;
+    z-index: 666;
+    line-height: 3rem;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+}
+.settingButton.spin {
+    transform: rotate(45deg);
+    color: white;
+}
+/* 结束header */
+
+/* 开始菜单栏 */
+.settingBox {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
     width: 100%;
     height: 0;
     overflow: hidden;
-    background-color: aquamarine;
-    border-radius: 0 0 10px 10px;
+    color: white;
+    background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0.8));
 }
-.coloritem {
-    padding: 14px;
-    font-size: 15px;
+.settingBox.expand {
+    height: 40vh;
 }
-.coloritem:hover {
-    font-size: 17px;
+.targetOptions {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    /*border: 1px solid red;*/
 }
-.fenhong {background-color: #ffb3a7; color: #000000;}
-.jianghuang {background-color: #ffc773; color: #000000;}
-.chase {background-color: #b35c44; color: #000000;}
-.cangbai {background-color: #d1d9e0; color: #000000;}
-.shuise {background-color: #88ada6; color: #000000;}
-/*结束导航栏*/
+.colorOptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 2rem);
+    justify-items: center;
+    grid-gap: 2rem 2rem;
+    width: 80%;
+    visibility: hidden;
+    opacity: 0;
+    /*border: 1px solid red;*/
+}
+.colorOptions.visible {
+    visibility: visible;
+    opacity: 1;
+}
+.targetOption {
+    line-height: 2rem;
+    width: 25%;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+.colorOption {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+}
+input {
+    display: none;
+}
+input[name="targetPoint"]:checked + .targetOption {
+    font-size: 1.3rem;
+    border: 1px dashed white
+}
+input[name="colorPoint"]:checked + .colorOption {
+    transform: scale(1.5);
+}
+/* 结束菜单栏 */
 
 /* 开始正文 */
 /*中文框*/
 .details {
-    line-height: 1.5em;
+    line-height: 1.5rem;
     margin: 1rem auto;
     padding: 1rem;
     font-family: "方正新书宋_GBK";
@@ -91,7 +138,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 /*英文框*/
-.content {
+.contents {
     margin: 1rem auto;
     padding: 1rem;
     font-family: "Garamond";
@@ -99,7 +146,7 @@ body {
     background-color: bisque;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 p {
     height: 0;
