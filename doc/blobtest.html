@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Page Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic HTML Page Example</h1>
+    <p>Click the button below to generate and open a new HTML page dynamically.</p>
+    <button onclick="createAndOpenHtmlFile()">Open New Page</button>
+
+    <script>
+function createAndOpenHtmlFile() {
+  // 创建HTML内容
+  var htmlContent = '<!DOCTYPE html><html><head><title>My HTML File</title></head><body><h1>Hello, World!</h1></body></html>';
+
+  // 将HTML内容转换为Blob对象
+  var blob = new Blob([htmlContent], { type: 'text/html' });
+
+  // 创建一个临时URL
+  var url = URL.createObjectURL(blob);
+//window.alert(url)
+  // 打开新窗口或标签页
+  var newWindow = window.open(url, '_blank');
+
+  setTimeout(() => {
+  URL.revokeObjectURL(url); // 手动释放 URL
+  window.alert("Blob URL released!");
+}, 3000); // 3秒后释放
+}
+
+// 调用函数
+
+
+     
+    </script>
+</body>
+</html>
